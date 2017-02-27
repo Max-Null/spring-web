@@ -11,29 +11,35 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <jstl.version>1.2</jstl.version>
         <java.version>1.8</java.version>
         <junit.version>4.11</junit.version>
         <slf4j.version>1.7.7</slf4j.version>
-        <httpclient.version>4.5.1</httpclient.version>
-        <servlet-api.version>2.5</servlet-api.version>
-        <javax.annotation-api.version>1.2</javax.annotation-api.version>
         <druid.version>1.0.12</druid.version>
-        <pagehelper.version>4.0.0</pagehelper.version>
-        <jstl.version>1.2</jstl.version>
+        <quartz.version>2.2.1</quartz.version>
+        <mapper.version>3.2.0</mapper.version>
         <aspectj.version>1.8.2</aspectj.version>
         <mybatis.version>3.2.8</mybatis.version>
-        <mybatis-spring.version>1.2.3</mybatis-spring.version>
+        <httpclient.version>4.5.1</httpclient.version>
+        <servlet-api.version>2.5</servlet-api.version>
         <pagehelper.version>4.0.0</pagehelper.version>
-        <mapper.version>3.2.0</mapper.version>
+        <selenium-java.version>2.33.0</selenium-java.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
-        <quartz.version>2.2.1</quartz.version>
+        <mybatis-spring.version>1.2.3</mybatis-spring.version>
+        <javax.annotation-api.version>1.2</javax.annotation-api.version>
         <javax.transaction-api.version>1.2</javax.transaction-api.version>
-        <javax.servlet.jsp-api.version>2.3.1</javax.servlet.jsp-api.version>
-        <mysql-connector-java.version>5.1.34</mysql-connector-java.version>
         <spring-framework.version>4.2.4.RELEASE</spring-framework.version>
+        <mysql-connector-java.version>5.1.34</mysql-connector-java.version>
+        <javax.servlet.jsp-api.version>2.3.1</javax.servlet.jsp-api.version>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.33.0</version>
+        </dependency>
 
         <!-- druid DataSource -->
         <dependency>
