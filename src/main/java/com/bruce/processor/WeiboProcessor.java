@@ -5,11 +5,11 @@ import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.*;
 import us.codecraft.webmagic.processor.PageProcessor;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -67,7 +67,21 @@ public class WeiboProcessor implements PageProcessor {
     }
 
     public static void main(String[] args) {
+        List<SpiderListener> spiderListeners = new ArrayList<>();
+        SpiderListener spiderListener =new SpiderListener() {
+            @Override
+            public void onSuccess(Request request) {
+                System.out.println("sucsess");
+            }
+
+            @Override
+            public void onError(Request request) {
+
+            }
+        };
+        spiderListeners.add(spiderListener);
         Spider.create(new WeiboProcessor())
+                .setSpiderListeners(spiderListeners)
                 .addUrl("https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=3349&r=http%3A%2F%2Fpad.weibo.cn%2F")
                 .thread(5)
                 .start();
