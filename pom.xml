@@ -1,5 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.bruce</groupId>
     <artifactId>spiderman</artifactId>
@@ -14,7 +16,6 @@
         <jstl.version>1.2</jstl.version>
         <java.version>1.8</java.version>
         <junit.version>4.11</junit.version>
-        <slf4j.version>1.7.7</slf4j.version>
         <druid.version>1.0.12</druid.version>
         <quartz.version>2.2.1</quartz.version>
         <mapper.version>3.2.0</mapper.version>
@@ -23,9 +24,11 @@
         <httpclient.version>4.5.1</httpclient.version>
         <servlet-api.version>2.5</servlet-api.version>
         <pagehelper.version>4.0.0</pagehelper.version>
-        <selenium-java.version>2.33.0</selenium-java.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
+        <selenium-java.version>2.33.0</selenium-java.version>
         <mybatis-spring.version>1.2.3</mybatis-spring.version>
+        <logback.version>1.1.2</logback.version>
+        <slf4j.version>1.7.24</slf4j.version>
         <javax.annotation-api.version>1.2</javax.annotation-api.version>
         <javax.transaction-api.version>1.2</javax.transaction-api.version>
         <spring-framework.version>4.2.4.RELEASE</spring-framework.version>
@@ -34,6 +37,17 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>1.7.24</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.24</version>
+        </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -132,37 +146,38 @@
             <groupId>us.codecraft</groupId>
             <artifactId>webmagic-core</artifactId>
             <version>0.6.1</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-            </exclusions>
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>org.slf4j</groupId>-->
+                    <!--<artifactId>slf4j-log4j12</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
         </dependency>
 
         <dependency>
             <groupId>us.codecraft</groupId>
             <version>0.6.1</version>
             <artifactId>webmagic-extension</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-            </exclusions>
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>org.slf4j</groupId>-->
+                    <!--<artifactId>slf4j-log4j12</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
         </dependency>
 
         <dependency>
             <groupId>us.codecraft</groupId>
             <artifactId>webmagic-selenium</artifactId>
             <version>0.6.1</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-            </exclusions>
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>org.slf4j</groupId>-->
+                    <!--<artifactId>slf4j-log4j12</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
         </dependency>
+
 
         <!-- mysql-connector-java -->
         <dependency>
@@ -265,6 +280,11 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
             <version>${spring-framework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.7</version>
         </dependency>
 
     </dependencies>

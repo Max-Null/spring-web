@@ -1,7 +1,9 @@
-# spring-web
+spring-web
+==========
 web project based on spring
+----------------------------
 
-add two examples:
-1.crawl ajax page
-2.login website
-3.login meipai
+## examples:<br/>
+1.crawl ajax page<br/>
+2.login website<br/>
+3.login meipai<br/>
