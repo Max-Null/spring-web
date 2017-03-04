@@ -1,11 +1,15 @@
 package com.bruce.processor.searchProcessor.baidu;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.bruce.processor.utils.BaseServlet;
+import com.bruce.utils.BaseServlet;
 import com.dao.model.Program;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import us.codecraft.webmagic.Request;
+import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.SpiderListener;
 
 import java.util.*;
 
@@ -19,28 +23,41 @@ public class BaiduServlet extends BaseServlet {
     @Override
     public synchronized void process(JSONObject input, JSONObject output1) {
         log.info("input:{}", input.toJSONString());
-        Deliver deliver = new Deliver();
-        deliver.deliver(input);
-        List<Program> programList_list = deliver.getProgramList_list();
-        List<Program> programList_pass_list = deliver.getProgramList_pass_list();
-        String receiveFlag = deliver.getReceiveFlag();
-        String searchMethod = deliver.getSearchMethod();
-        String version = deliver.getVersion();
-        Integer flag = deliver.getFlag();
-        JSONObject data_map = deliver.getData_map();
-        JSONArray filterWords = deliver.getFilterWords();
-        Integer workId = deliver.getWorkId();
-        JSONArray commonKey = deliver.getCommonKey();
-        String keyword = deliver.getKeyword();
-        JSONArray keyWords = deliver.getKeyWords();
-        String workName = deliver.getWorkName();
-        Properties p = deliver.getP();
-
         //// FIXME: 2017/2/10
-        Baidu baidu = new Baidu();
-        baidu.Baidu(data_map, commonKey, keyword, keyWords, searchMethod, flag
-                , workName, workId, filterWords, p, receiveFlag, version
-                , programList_list, programList_pass_list);
+        Baidu_new processor = new Baidu_new();
+        //FIXME
+        String url = "";
+        JSONObject output = new JSONObject();
+        Date sysDateStart = new Date();
+        url = "http://www.baidu.com/s?wd=极限特工&ie=UTF-8";
+        Request request = new Request(url);
+        List<SpiderListener> listeners = new ArrayList<>();
+        listeners.add(new SpiderListener() {
+            @Override
+            public void onSuccess(Request request) {
+
+            }
+
+            @Override
+            public void onError(Request request) {
+                log.error("spider listener error,request={}", request.toString());
+            }
+        });
+        Spider.create(processor)
+                .thread(5)
+                .setSpiderListeners(listeners)
+                .addRequest(request)
+                .run();
+
+        List<Program> programList = processor.getProgramList();
+
+        Date sysDateEnd = new Date();
+        long time = sysDateEnd.getTime() - sysDateStart.getTime();
+        log.info("----------------processing time:{}s", time / 1000);
+        output.put("processing time", time / 1000 + "s");
+        log.info("------------------------------------  crarwl over -------------------------------------------");
+
+        output.put("data", JSON.toJSON(programList));
 
 
     }

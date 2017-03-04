@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="spiderman:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="spiderman.war">
-      <element id="artifact" artifact-name="spiderman:war exploded" />
-    </root>
-  </artifact>
-</component>
