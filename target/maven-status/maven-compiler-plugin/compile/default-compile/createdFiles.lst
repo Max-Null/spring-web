@@ -1,8 +1,8 @@
 com\bruce\processor\SpiderThread$OnSpiderListener.class
 com\dao\service\impl\ProgramServiceImpl.class
 com\bruce\processor\extendProcessor\WeiboProcessor.class
-com\bruce\schedule\BsseSchedule$1.class
 com\dao\service\ProgramService.class
+com\bruce\schedule\BaseSchedule.class
 com\bruce\processor\searchProcessor\baidu\Deliver.class
 com\bruce\processor\searchProcessor\baidu\Baidu_new.class
 com\bruce\listener\InitServletContextListener.class
@@ -10,7 +10,7 @@ com\bruce\utils\HttpsClientDownloaderBaidu$2.class
 com\bruce\processor\extendProcessor\CompanyProcessor.class
 com\bruce\processor\searchProcessor\baidu\BaiduServlet$1.class
 com\bruce\processor\extendProcessor\MeipaiProccessor.class
-com\bruce\schedule\BsseSchedule.class
+com\bruce\schedule\BaseSchedule$1.class
 com\bruce\utils\HttpsClientDownloaderBaidu.class
 com\bruce\processor\extendProcessor\MeipaiProccessor$1.class
 com\bruce\processor\searchProcessor\baidu\BaiduServlet.class

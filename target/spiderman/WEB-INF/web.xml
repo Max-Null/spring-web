@@ -9,7 +9,6 @@
         <param-value>classpath:applicationContext.xml</param-value>
     </context-param>
 
-
     <filter>
         <filter-name>SpringEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter
@@ -29,12 +28,18 @@
     </filter-mapping>
 
 
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
 
     <listener>
         <description>spring监听器</description>
-        <listener-class>org.springframework.web.context.ContextLoaderListener
+        <listener-class><!--org.springframework.web.context.ContextLoaderListener-->com.bruce.listener.InitServletContextListener
         </listener-class>
     </listener>
+
+
 
     <servlet>
         <servlet-name>baidu</servlet-name>

@@ -10,6 +10,7 @@ import org.springframework.core.io.UrlResource;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
+import org.springframework.web.context.support.XmlWebApplicationContext;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -25,14 +26,14 @@ import java.net.URL;
  * @create 2017-03-03 23:48
  **/
 public class InitServletContextListener extends ContextLoaderListener implements ServletContextListener {
-    protected Logger logger = LoggerFactory.getLogger(getClass());
+    protected Logger loggerInitServletContextListener = LoggerFactory.getLogger(getClass());
 
     public void contextInitialized(ServletContextEvent sce) {
+        System.out.println("init");
         WebApplicationContext appContext = WebApplicationContextUtils.getRequiredWebApplicationContext(sce.getServletContext());
         DefaultListableBeanFactory beanFactory = (DefaultListableBeanFactory) appContext
                 .getAutowireCapableBeanFactory();
 
-        System.out.println("init");
         loadBeanFromXml(beanFactory, "bruce.xml");
         Object object = SpringContextUtil.getBean("baseCrawler");
         try {

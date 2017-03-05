@@ -15,6 +15,7 @@
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/bruce.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -29,7 +30,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.7" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.24" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-simple:1.7.24" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-java:2.33.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-android-driver:2.33.0" level="project" />
