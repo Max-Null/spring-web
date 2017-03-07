@@ -2,10 +2,11 @@ package com.bruce.schedule;
 
 import com.bruce.processor.SpiderThread;
 import com.bruce.processor.searchProcessor.baidu.Baidu_new;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.processor.PageProcessor;
-import us.codecraft.webmagic.scheduler.PriorityScheduler;
 
 /**
  * 爬虫调度类
@@ -14,7 +15,7 @@ import us.codecraft.webmagic.scheduler.PriorityScheduler;
  * @create 2017-03-04 0:18
  **/
 public class BaseSchedule {
-
+    final Logger log = LoggerFactory.getLogger(BaseSchedule.class);
     public void startAll() {
         String url = "http://www.baidu.com/s?wd=极限特工&ie=UTF-8";
         Request request = new Request(url);
@@ -29,6 +30,7 @@ public class BaseSchedule {
         SpiderThread.create(spider).setSpiderListener(new SpiderThread.OnSpiderListener() {
             @Override
             public void onEnd() {
+                log.info("=================== crawl over ====================");
             }
         }).start();
     }

@@ -26,10 +26,10 @@ import java.net.URL;
  * @create 2017-03-03 23:48
  **/
 public class InitServletContextListener extends ContextLoaderListener implements ServletContextListener {
-    protected Logger loggerInitServletContextListener = LoggerFactory.getLogger(getClass());
+    protected Logger logger = LoggerFactory.getLogger(getClass());
 
     public void contextInitialized(ServletContextEvent sce) {
-        System.out.println("init");
+        logger.info("init");
         WebApplicationContext appContext = WebApplicationContextUtils.getRequiredWebApplicationContext(sce.getServletContext());
         DefaultListableBeanFactory beanFactory = (DefaultListableBeanFactory) appContext
                 .getAutowireCapableBeanFactory();
@@ -71,21 +71,6 @@ public class InitServletContextListener extends ContextLoaderListener implements
             beanFactory.registerBeanDefinition(beanId, bd);
         }
     }
-
-    private void loadDeltaScheduler(DefaultListableBeanFactory beanFactory, String fileName, String schedule) {
-        loadBeanFromXml(beanFactory, "delta/" + fileName);
-        Object kkSchedule = beanFactory.getBean(schedule);
-        try {
-            tryInvoke(kkSchedule, "start");
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
-    }
-
 
     private void tryInvoke(Object bean, String methodName, Object... args) throws SecurityException,
             NoSuchMethodException, IllegalArgumentException,

@@ -1,6 +1,6 @@
 package com.bruce.processor.searchProcessor.baidu;
 
-import com.alibaba.fastjson.JSONArray;
+import com.bruce.processor.searchProcessor.FilterUtils;
 import com.dao.model.Program;
 import org.apache.commons.lang3.StringUtils;
 import us.codecraft.webmagic.Page;
@@ -8,7 +8,6 @@ import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.Html;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -26,10 +25,6 @@ public class Baidu_new implements PageProcessor {
 
     public List<Program> getProgramList() {
         return programList;
-    }
-
-    public void setProgramList(List<Program> programList) {
-        this.programList = programList;
     }
 
     @Override
@@ -55,7 +50,7 @@ public class Baidu_new implements PageProcessor {
                 page.addTargetRequest(url_real);
             }
         } else {
-            FilterUtilsBaidu baiduFilterUtils = new FilterUtilsBaidu();
+            FilterUtils baiduFilterUtils = new FilterUtils();
             baiduFilterUtils.BaiduSearch(page,programList);
         }
     }
