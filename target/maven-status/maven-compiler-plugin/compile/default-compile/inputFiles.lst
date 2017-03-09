@@ -1,18 +1,20 @@
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\bruce\processor\extendProcessor\MeipaiProccessor.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\dao\service\ProgramService.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\bruce\processor\SpiderThread.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\bruce\processor\searchProcessor\baidu\Baidu_new.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\bruce\processor\searchProcessor\baidu\FilterUtilsBaidu.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\bruce\listener\InitServletContextListener.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\bruce\schedule\BaseSchedule.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\bruce\processor\searchProcessor\baidu\Deliver.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\bruce\utils\HttpsClientDownloaderBaidu.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\bruce\processor\searchProcessor\baidu\BaiduServlet.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\bruce\utils\HttpUtil.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\dao\model\Program.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\dao\service\impl\ProgramServiceImpl.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\dao\mapper\ProgramMapper.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\bruce\utils\SpringContextUtil.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\bruce\processor\extendProcessor\CompanyProcessor.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\bruce\processor\extendProcessor\WeiboProcessor.java
-E:\Program Files (x86)\workspace\spring-web\src\main\java\com\bruce\utils\BaseServlet.java
+E:\workspace\spring-web\src\main\java\com\bruce\listener\InitServletContextListener.java
+E:\workspace\spring-web\src\main\java\com\bruce\processor\searchProcessor\baidu\Baidu_new.java
+E:\workspace\spring-web\src\main\java\com\bruce\processor\extendProcessor\MeipaiProccessor.java
+E:\workspace\spring-web\src\main\java\com\dao\service\impl\ProgramServiceImpl.java
+E:\workspace\spring-web\src\main\java\com\bruce\processor\searchProcessor\wechat\Wechat_new.java
+E:\workspace\spring-web\src\main\java\com\bruce\processor\extendProcessor\CompanyProcessor.java
+E:\workspace\spring-web\src\main\java\com\dao\service\ProgramService.java
+E:\workspace\spring-web\src\main\java\com\bruce\processor\extendProcessor\WeiboProcessor.java
+E:\workspace\spring-web\src\main\java\com\bruce\processor\extendProcessor\HtmlUnitDriverProcessor.java
+E:\workspace\spring-web\src\main\java\com\bruce\schedule\BaseSchedule.java
+E:\workspace\spring-web\src\main\java\com\bruce\utils\SpringContextUtil.java
+E:\workspace\spring-web\src\main\java\com\bruce\utils\HttpsClientDownloaderBaidu.java
+E:\workspace\spring-web\src\main\java\com\dao\mapper\ProgramMapper.java
+E:\workspace\spring-web\src\main\java\com\dao\model\Program.java
+E:\workspace\spring-web\src\main\java\com\bruce\processor\SpiderThread.java
+E:\workspace\spring-web\src\main\java\com\bruce\processor\searchProcessor\FilterUtils.java
+E:\workspace\spring-web\src\main\java\com\bruce\processor\searchProcessor\wechat\WechatServlet.java
+E:\workspace\spring-web\src\main\java\com\bruce\utils\HttpUtil.java
+E:\workspace\spring-web\src\main\java\com\bruce\utils\BaseServlet.java
+E:\workspace\spring-web\src\main\java\com\bruce\processor\searchProcessor\baidu\BaiduServlet.java

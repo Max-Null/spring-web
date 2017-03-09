@@ -70,7 +70,7 @@
         <appender-ref ref="FILE-ERROR" />
     </root>
     <!--这里指定logger name 是为jmx设置日志级别做铺垫 -->
-    <logger name="com.xiaobai">
+    <logger name="com.bruce">
         <level value="INFO" />
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE" />
