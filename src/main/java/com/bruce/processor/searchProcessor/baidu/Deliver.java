@@ -2,7 +2,7 @@ package com.bruce.processor.searchProcessor.baidu;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.dao.model.Program;
+import com.qipachong.maxnull.model.Program;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,11 +1,9 @@
 package com.bruce.schedule;
 
 import com.bruce.processor.SpiderThread;
-import com.bruce.processor.searchProcessor.baidu.Baidu_new;
 import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.processor.PageProcessor;
-import us.codecraft.webmagic.scheduler.PriorityScheduler;
 
 /**
  * 爬虫调度类
@@ -16,9 +14,9 @@ import us.codecraft.webmagic.scheduler.PriorityScheduler;
 public class BaseSchedule {
 
     public void startAll() {
-        String url = "http://www.baidu.com/s?wd=极限特工&ie=UTF-8";
+    /*    String url = "http://www.baidu.com/s?wd=极限特工&ie=UTF-8";
         Request request = new Request(url);
-        start_crawl(new Baidu_new(),request);
+        start_crawl(new Baidu_new(),request);*/
     }
 
     public void start_crawl(PageProcessor processor,Request request) {

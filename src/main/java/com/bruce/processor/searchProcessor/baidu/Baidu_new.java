@@ -1,14 +1,12 @@
 package com.bruce.processor.searchProcessor.baidu;
 
-import com.alibaba.fastjson.JSONArray;
-import com.dao.model.Program;
+import com.qipachong.maxnull.model.Program;
 import org.apache.commons.lang3.StringUtils;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.Html;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
