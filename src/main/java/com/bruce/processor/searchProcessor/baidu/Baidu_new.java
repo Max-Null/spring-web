@@ -1,7 +1,11 @@
 package com.bruce.processor.searchProcessor.baidu;
 
+<<<<<<< HEAD
 import com.bruce.processor.searchProcessor.FilterUtils;
 import com.dao.model.Program;
+=======
+import com.qipachong.maxnull.model.Program;
+>>>>>>> 4a4d8cf8f6ec4605472e949049abb645a5f7706e
 import org.apache.commons.lang3.StringUtils;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
