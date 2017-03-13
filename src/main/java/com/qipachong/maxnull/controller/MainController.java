@@ -53,7 +53,7 @@ public class MainController extends BaseController{
 			//values[0]="baidu";values[1]="20";
 			if ("baidu".equals(values[0])) {
 				System.out.println("OK");
-				dataList = programService.baiduSearch(key,values[1]);
+				dataList = programService.Search(key,values[0],values[1]);
 				if (null != dataList && dataList.size() > 0) {
 					jr = renderSuccess();
 					dtoList = new ArrayList<>();

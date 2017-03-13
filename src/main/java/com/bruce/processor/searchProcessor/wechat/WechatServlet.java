@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.bruce.processor.searchProcessor.baidu.Baidu_new;
 import com.bruce.utils.BaseServlet;
-import com.dao.model.Program;
+import com.qipachong.maxnull.model.Program;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import us.codecraft.webmagic.Request;

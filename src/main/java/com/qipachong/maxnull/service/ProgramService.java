@@ -17,6 +17,6 @@ public interface ProgramService {
     int insertSelective(Program program);
     void batchInsert(List<Program> programList);
     void updateMatchStatus(Program program);
-    List<Program> baiduSearch(String key,String page);
+    List<Program> Search(String key,String platform,String infoNum);
 
 }

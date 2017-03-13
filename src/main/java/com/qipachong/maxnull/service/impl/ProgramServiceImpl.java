@@ -1,8 +1,8 @@
 package com.qipachong.maxnull.service.impl;
 
-import com.bruce.processor.searchProcessor.baidu.Baidu_new;
 import com.qipachong.maxnull.mapper.ProgramMapper;
 import com.qipachong.maxnull.model.Program;
+import com.qipachong.maxnull.pageProcessor.BaiduSearchPageProcesser;
 import com.qipachong.maxnull.service.ProgramService;
 import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSession;
@@ -59,12 +59,28 @@ public class ProgramServiceImpl implements ProgramService {
     }
 
     @Override
-    public List<Program> baiduSearch(String key,String page){
-        Baidu_new processor = new Baidu_new();
+    public List<Program> Search(String key, String platform, String infoNum){
+        List<Program> programList = null;
+        switch(platform)
+        {
+            case "baidu":
+                programList = BaiduSearch(key,infoNum);
+                break;
+            case "weixin":
+                programList = BaiduSearch(key,infoNum);
+                break;
+            default:
+                System.out.println("default");
+                break;
+        }
+        return programList;
+    }
+    public List<Program> BaiduSearch(String key,String infoNum){
+        //Baidu_new processor = new Baidu_new();
+        BaiduSearchPageProcesser processor = new BaiduSearchPageProcesser(Integer.parseInt(infoNum));
         //FIXME
-        String url = "";
-        Date sysDateStart = new Date();
-        url = "http://www.baidu.com/s?wd="+key+"&ie=UTF-8";
+        String url;
+        url = "http://www.baidu.com/s?rn=50&wd="+key+"&ie=UTF-8";
         Request request = new Request(url);
         List<SpiderListener> listeners = new ArrayList<>();
         listeners.add(new SpiderListener() {
@@ -72,20 +88,19 @@ public class ProgramServiceImpl implements ProgramService {
             public void onSuccess(Request request) {
 
             }
-
             @Override
             public void onError(Request request) {
                 log.error("spider listener error,request={}", request.toString());
             }
         });
-        Spider.create(processor)
+        Spider baiduspider = Spider.create(processor)
                 .thread(5)
                 .setSpiderListeners(listeners)
-                .addRequest(request)
-                .run();
-
-        List<Program> programList = processor.getProgramList();
-
+                .addRequest(request);
+        baiduspider.run();
+        System.out.println("用时：" + (new Date().getTime()-baiduspider.getStartTime().getTime()));
+        List<Program> programList = processor.getProgramList().subList(0,Integer.parseInt(infoNum));
+        //FilterUtils.setKeepNum(1);
         return programList;
     }
 

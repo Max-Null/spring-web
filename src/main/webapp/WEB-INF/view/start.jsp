@@ -3,6 +3,7 @@
 <html lang="zh-cn">
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="nowDate" value="<%=System.currentTimeMillis()%>"></c:set>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
@@ -209,7 +210,8 @@
                                 </tr>--%>
                             </tbody>
                         </table>
-                        <ul class="pagination">
+                        <div id="baiduPage"></div>
+                        <%--<ul class="pagination">
                             <li>
                                 <a href="#">上一页</a>
                             </li>
@@ -217,7 +219,7 @@
                             <li>
                                 <a href="#">下一页</a>
                             </li>
-                        </ul>
+                        </ul>--%>
                     </div>
                     <div class="tab-pane" id="panel-weixin">
                         <div class="btn-group">
@@ -409,7 +411,9 @@
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap-switch/4.0.0-alpha.1/js/bootstrap-switch.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap-slider/9.7.2/bootstrap-slider.js"></script>
+<script src="${ctx}resource/js/pageHelper.js?ver=${nowDate}"></script>
 <script>
+    var baiduPage;
     $(function () {
         $("input[type=\"checkbox\"], input[type=\"radio\"]").not("[data-switch-no-init]").bootstrapSwitch();
         //$("[name='my-checkbox']").bootstrapSwitch();
@@ -504,27 +508,20 @@
                     for (var j = 0; j < platforms.length; j++) {
                         var platform = platforms[j];
                         var list = resp['data'][platform+'List'];
-                        var page = resp['data']['page'];
-                        $("#tbody-"+platform).empty();
-                        for(var i=0;i<list.length;i++){
-                            <%--<tr>
-                                <td> 1</td> <td> 土豆</td><td> 测试标题</td> <td> http://www.baidu.com</td> <td> 01/04/2012</td> <td> Default</td>
-                            </tr>--%>
-                            $("#tbody-"+platform).append(
-                                    "<tr id=\""+platform+i+"\">"+
-                                    "<td>"+i+"</td>"+
-//                                    "<td>"+(i+1+(page.pageNum-1)*100)+"</td>"+
-                                    "<td>"+list[i].platform+"</td>"+
-                                    "<td><div style=\"width:100px; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;\">"+list[i].title+"</div></td>"+
-                                    "<td><a href=\""+list[i].url+"\" target=\"_blank\"><div style=\"width:150px; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;\">"+list[i].url+"</div></a></td>"+
-                                    "<td>"+list[i].date+"</td>"+
-                                    "<td>"+list[i].state+"</td>"+
-                                    "</tr>"
-                            );
-                        }
-//                        $("#pages").append(page.pages);
-//                        $("#total").append(page.total);
-//                        $("#num").append(page.pageNum);
+                        baiduPage = new PageHelper("baiduPage","baidu",list,{count:10,navigatePages:5});
+//                        $("#tbody-"+platform).empty();
+//                        for(var i=0;i<list.length;i++){
+//                            $("#tbody-"+platform).append(
+//                                    "<tr id=\""+platform+(i+1)+"\">"+
+//                                    "<td>"+(i+1)+"</td>"+
+//                                    "<td>"+list[i].platform+"</td>"+
+//                                    "<td><div style=\"width:100px; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;\">"+list[i].title+"</div></td>"+
+//                                    "<td><a href=\""+list[i].url+"\" target=\"_blank\"><div style=\"width:150px; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;\">"+list[i].url+"</div></a></td>"+
+//                                    "<td>"+list[i].date+"</td>"+
+//                                    "<td>"+list[i].state+"</td>"+
+//                                    "</tr>"
+//                            );
+//                        }
                     }
                 } else {
                     alert(resp['errormsg']);
@@ -538,6 +535,7 @@
             $(".my-slider").bootstrapSlider('setValue', 20);
         });
     })
+    //隐藏提示栏
     function hidePopover(id) {
         $('#'+id).popover('hide');
     }
