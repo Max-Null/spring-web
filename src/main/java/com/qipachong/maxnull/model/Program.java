@@ -73,15 +73,6 @@ public class Program implements Serializable {
     private Integer extraInfo;
 
 
-
-
-
-
-
-
-
-
-
     public Long getId() {
         return id;
     }

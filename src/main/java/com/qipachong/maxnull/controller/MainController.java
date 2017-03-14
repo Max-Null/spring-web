@@ -16,10 +16,10 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-//@RequestMapping("/book") // url:/模块/资源/{id}/细分 /seckill/list
 public class MainController extends BaseController{
 
 	/**
+	 *	起始页面
 	 *
 	 * @param model
 	 * @return
@@ -31,6 +31,7 @@ public class MainController extends BaseController{
 	}
 
 	/**
+	 * 展示爬取到的信息
 	 *
 	 * @param key
 	 * @param range

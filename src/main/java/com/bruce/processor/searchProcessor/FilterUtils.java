@@ -1,6 +1,6 @@
 package com.bruce.processor.searchProcessor;
 
-import com.dao.model.Program;
+import com.qipachong.maxnull.model.Program;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,7 +8,7 @@ import us.codecraft.webmagic.Page;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.util.*;
+import java.util.List;
 
 /**
  * @author Bruce_Q

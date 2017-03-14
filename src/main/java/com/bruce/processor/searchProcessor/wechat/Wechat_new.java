@@ -1,7 +1,7 @@
 package com.bruce.processor.searchProcessor.wechat;
 
 import com.bruce.processor.searchProcessor.FilterUtils;
-import com.dao.model.Program;
+import com.qipachong.maxnull.model.Program;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;

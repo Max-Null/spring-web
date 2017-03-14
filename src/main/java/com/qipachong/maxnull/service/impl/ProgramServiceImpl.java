@@ -63,7 +63,6 @@ public class ProgramServiceImpl implements ProgramService {
         Baidu_new processor = new Baidu_new();
         //FIXME
         String url = "";
-        Date sysDateStart = new Date();
         url = "http://www.baidu.com/s?wd="+key+"&ie=UTF-8";
         Request request = new Request(url);
         List<SpiderListener> listeners = new ArrayList<>();
