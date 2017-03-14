@@ -17,9 +17,9 @@ import java.util.List;
 public class FilterUtils {
     private final Logger logger = LoggerFactory.getLogger(getClass());
     //保留数量
-    private static int i = 1;
+    private static int keepNum = 1;
     //过滤数量
-    private static int j = 1;
+    private static int filterNum = 1;
 
     public void BaiduSearch(Page page, List<Program> programList) {
         Program program = new Program();
@@ -36,8 +36,24 @@ public class FilterUtils {
         if (program.getPcUrl() != null) {
             programList.add(program);
         }
-        logger.info("------------------------------保留操作：" + i + "---------------------------------------------");
-        i++;
+        logger.info("------------------------------保留操作：" + keepNum + "---------------------------------------------");
+        keepNum++;
+    }
+
+    public static int getKeepNum() {
+        return keepNum;
+    }
+
+    public static void setKeepNum(int keepNum) {
+        FilterUtils.keepNum = keepNum;
+    }
+
+    public static int getFilterNum() {
+        return filterNum;
+    }
+
+    public static void setFilterNum(int filterNum) {
+        FilterUtils.filterNum = filterNum;
     }
 }
 

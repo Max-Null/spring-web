@@ -1,6 +1,9 @@
 package com.bruce.processor.searchProcessor.baidu;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> Max-Null/master
 import com.bruce.processor.searchProcessor.FilterUtils;
 import com.qipachong.maxnull.model.Program;
 import org.apache.commons.lang3.StringUtils;
