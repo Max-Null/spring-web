@@ -1,16 +1,8 @@
 com\bruce\processor\SpiderThread$OnSpiderListener.class
-<<<<<<< HEAD
-com\bruce\processor\searchProcessor\FilterUtils.class
-com\dao\service\impl\ProgramServiceImpl.class
-com\bruce\processor\extendProcessor\WeiboProcessor.class
-com\dao\service\ProgramService.class
-com\bruce\schedule\BaseSchedule.class
-com\bruce\processor\searchProcessor\wechat\WechatServlet.class
-=======
 com\qipachong\maxnull\utils\DigestUtils.class
 com\qipachong\maxnull\utils\SpringContextUtil.class
 com\bruce\processor\extendProcessor\WeiboProcessor.class
->>>>>>> 4a4d8cf8f6ec4605472e949049abb645a5f7706e
+com\bruce\processor\searchProcessor\wechat\WechatServlet.class
 com\bruce\processor\searchProcessor\baidu\Baidu_new.class
 com\qipachong\maxnull\utils\StringUtils.class
 com\qipachong\maxnull\service\ProgramService.class
@@ -20,13 +12,7 @@ com\bruce\processor\extendProcessor\HtmlUnitDriverProcessor.class
 com\bruce\utils\HttpsClientDownloaderBaidu$2.class
 com\qipachong\maxnull\mapper\ProgramMapper.class
 com\bruce\processor\extendProcessor\CompanyProcessor.class
-<<<<<<< HEAD
-com\bruce\processor\searchProcessor\baidu\BaiduServlet$1.class
-com\bruce\processor\searchProcessor\wechat\WechatServlet$1.class
-com\bruce\processor\extendProcessor\MeipaiProccessor.class
-=======
 com\qipachong\maxnull\utils\UploadTools.class
->>>>>>> 4a4d8cf8f6ec4605472e949049abb645a5f7706e
 com\bruce\schedule\BaseSchedule$1.class
 com\bruce\utils\HttpsClientDownloaderBaidu.class
 com\qipachong\maxnull\utils\DateUtils$Type.class
@@ -38,13 +24,9 @@ com\bruce\utils\HttpsClientDownloaderBaidu$1.class
 com\bruce\utils\SpringContextUtil.class
 com\qipachong\maxnull\utils\CharsetUtil$1Inner.class
 com\bruce\utils\BaseServlet.class
-<<<<<<< HEAD
-com\dao\model\Program.class
-com\dao\mapper\ProgramMapper.class
-com\bruce\processor\searchProcessor\wechat\Wechat_new.class
-=======
 com\qipachong\maxnull\dto\InfoDto.class
 com\qipachong\maxnull\utils\CheckInput$KeyType.class
+com\bruce\processor\searchProcessor\FilterUtils.class
 com\qipachong\maxnull\utils\MediaTypes.class
 com\qipachong\maxnull\utils\EncodeUtils.class
 com\bruce\schedule\BaseSchedule.class
@@ -55,6 +37,7 @@ com\qipachong\maxnull\utils\Base64AndPicture.class
 com\qipachong\maxnull\utils\DateUtils.class
 com\bruce\processor\searchProcessor\baidu\BaiduServlet$1.class
 com\qipachong\maxnull\utils\DateTools$DateTypeEnum.class
+com\bruce\processor\searchProcessor\wechat\WechatServlet$1.class
 com\bruce\processor\extendProcessor\MeipaiProccessor.class
 com\qipachong\maxnull\enums\AppointStateEnum.class
 com\qipachong\maxnull\utils\CharsetUtil$Charset.class
@@ -75,5 +58,5 @@ com\qipachong\maxnull\utils\DateTools.class
 com\qipachong\maxnull\utils\ResponseUtil.class
 com\qipachong\maxnull\dto\IPAddressInfoDTO.class
 com\qipachong\maxnull\model\Program.class
+com\bruce\processor\searchProcessor\wechat\Wechat_new.class
 com\qipachong\maxnull\utils\CheckInput.class
->>>>>>> 4a4d8cf8f6ec4605472e949049abb645a5f7706e
