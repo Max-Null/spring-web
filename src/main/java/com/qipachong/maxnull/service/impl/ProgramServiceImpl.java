@@ -1,5 +1,6 @@
 package com.qipachong.maxnull.service.impl;
 
+import com.bruce.processor.searchProcessor.wechat.WechatSearchProcesser;
 import com.qipachong.maxnull.mapper.ProgramMapper;
 import com.qipachong.maxnull.model.Program;
 import com.qipachong.maxnull.pageProcessor.BaiduSearchPageProcesser;
@@ -34,30 +35,6 @@ public class ProgramServiceImpl implements ProgramService {
     @Autowired
     SqlSessionFactory sqlSessionFactory;
 
-    public int insertSelective(Program program) {
-        return programMapper.insertSelective(program);
-    }
-
-    public int insert(Program program) {
-        return programMapper.insert(program);
-    }
-
-
-    @Override
-    public void batchInsert(List<Program> programList) {
-        SqlSession session = sqlSessionFactory.openSession(ExecutorType.BATCH);
-
-        for (int i = 0; i < programList.size(); i++) {
-            session.insert("com.xiaobai.crawler.mapper.ProgramMapper.insertSelective",
-                    programList.get(i));
-        }
-        session.commit();
-        session.close();
-    }
-    public void updateMatchStatus(Program program) {
-        this.programMapper.updateMatchStatus(program);
-    }
-
     @Override
     public List<Program> Search(String key, String platform, String infoNum){
         List<Program> programList = null;
@@ -67,7 +44,7 @@ public class ProgramServiceImpl implements ProgramService {
                 programList = BaiduSearch(key,infoNum);
                 break;
             case "weixin":
-                programList = BaiduSearch(key,infoNum);
+                programList = WechatSearch(key,infoNum);
                 break;
             default:
                 System.out.println("default");
@@ -79,13 +56,8 @@ public class ProgramServiceImpl implements ProgramService {
         //Baidu_new processor = new Baidu_new();
         BaiduSearchPageProcesser processor = new BaiduSearchPageProcesser(Integer.parseInt(infoNum));
         //FIXME
-<<<<<<< HEAD
-        String url = "";
-        url = "http://www.baidu.com/s?wd="+key+"&ie=UTF-8";
-=======
         String url;
         url = "http://www.baidu.com/s?rn=50&wd="+key+"&ie=UTF-8";
->>>>>>> Max-Null/master
         Request request = new Request(url);
         List<SpiderListener> listeners = new ArrayList<>();
         listeners.add(new SpiderListener() {
@@ -104,6 +76,34 @@ public class ProgramServiceImpl implements ProgramService {
                 .addRequest(request);
         baiduspider.run();
         System.out.println("用时：" + (new Date().getTime()-baiduspider.getStartTime().getTime()));
+        List<Program> programList = processor.getProgramList().subList(0,Integer.parseInt(infoNum));
+        //FilterUtils.setKeepNum(1);
+        return programList;
+    }
+
+    public List<Program> WechatSearch(String key,String infoNum){
+        WechatSearchProcesser processor = new WechatSearchProcesser(Integer.parseInt(infoNum));
+        //FIXME
+        String url;
+        url = "http://www.baidu.com/s?rn=50&wd="+key+"&ie=UTF-8";
+        Request request = new Request(url);
+        List<SpiderListener> listeners = new ArrayList<>();
+        listeners.add(new SpiderListener() {
+            @Override
+            public void onSuccess(Request request) {
+
+            }
+            @Override
+            public void onError(Request request) {
+                log.error("spider listener error,request={}", request.toString());
+            }
+        });
+        Spider wechatspider = Spider.create(processor)
+                .thread(5)
+                .setSpiderListeners(listeners)
+                .addRequest(request);
+        wechatspider.run();
+        System.out.println("用时：" + (new Date().getTime()-wechatspider.getStartTime().getTime()));
         List<Program> programList = processor.getProgramList().subList(0,Integer.parseInt(infoNum));
         //FilterUtils.setKeepNum(1);
         return programList;

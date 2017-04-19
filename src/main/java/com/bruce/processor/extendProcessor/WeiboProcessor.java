@@ -23,6 +23,7 @@ public class WeiboProcessor implements PageProcessor {
 
     @Override
     public void process(Page page) {
+        System.setProperty("webdriver.chrome.driver", "G:\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=3349&r=http%3A%2F%2Fpad.weibo.cn%2F");
         try {
@@ -36,7 +37,7 @@ public class WeiboProcessor implements PageProcessor {
 
         //找到名为"loginPassword"的元素，填写密码
         driver.findElement(By.id("loginPassword")).clear();
-        driver.findElement(By.id("loginPassword")).sendKeys("bruceq86706519");
+        driver.findElement(By.id("loginPassword")).sendKeys("qixinq86706519");
 
         //找到登录按钮，点击
         driver.findElement(By.id("loginAction")).click();

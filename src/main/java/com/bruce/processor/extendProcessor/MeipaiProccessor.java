@@ -22,7 +22,8 @@ public class MeipaiProccessor implements PageProcessor {
     @Override
     public void process(Page page) {
         WebDriver driver = new ChromeDriver();
-        driver.get("http://www.meipai.com/");
+//        driver.get("http://www.meipai.com/");
+        driver.get("http://weixin.sogou.com/weixin?type=2&s_from=input&query=%E6%88%91%E7%9A%84%E7%89%B9%E5%B7%A5%E7%88%B7%E7%88%B7&ie=utf8&_sug_=y&_sug_type_=&w=01019900&sut=25&sst0=1490428824764&lkt=1,1490428824661,1490428824661");
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -69,7 +70,8 @@ public class MeipaiProccessor implements PageProcessor {
         spiderListeners.add(spiderListener);
         Spider.create(new MeipaiProccessor())
                 .setSpiderListeners(spiderListeners)
-                .addUrl("http://www.meipai.com/")
+//                .addUrl("http://www.meipai.com/")
+                .addUrl("http://weixin.sogou.com/weixin?type=2&s_from=input&query=%E6%88%91%E7%9A%84%E7%89%B9%E5%B7%A5%E7%88%B7%E7%88%B7&ie=utf8&_sug_=y&_sug_type_=&w=01019900&sut=25&sst0=1490428824764&lkt=1,1490428824661,1490428824661")
                 .thread(5)
                 .start();
     }

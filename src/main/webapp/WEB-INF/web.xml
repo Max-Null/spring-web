@@ -39,7 +39,14 @@
         </listener-class>
     </listener>
 
-
+    <servlet>
+        <servlet-name>meipai</servlet-name>
+        <servlet-class>com.bruce.processor.extendProcessor.MeipaiProccessor</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>meipai</servlet-name>
+        <url-pattern>/meipai</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>baidu</servlet-name>

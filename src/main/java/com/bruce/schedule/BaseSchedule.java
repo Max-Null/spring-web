@@ -1,10 +1,6 @@
 package com.bruce.schedule;
 
 import com.bruce.processor.SpiderThread;
-<<<<<<< HEAD
-import com.bruce.processor.searchProcessor.baidu.Baidu_new;
-=======
->>>>>>> Max-Null/master
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import us.codecraft.webmagic.Request;
